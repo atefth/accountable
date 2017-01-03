@@ -1,0 +1,494 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{18753C15-BBAC-4577-8EB6-B6868A0C8894}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Accountable</RootNamespace>
+    <AssemblyName>Accountable</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Actors\Actor.cs" />
+    <Compile Include="Actors\Administrators\Administrator.cs" />
+    <Compile Include="Actors\Administrators\OfficeAdmin.cs" />
+    <Compile Include="Actors\Administrators\FactoryAdmin.cs" />
+    <Compile Include="Actors\Administrators\RootAdmin.cs" />
+    <Compile Include="Actors\Administrators\UX\AddNewAdministrator.xaml.cs">
+      <DependentUpon>AddNewAdministrator.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Actors\Administrators\UX\NewAdministrator.xaml.cs">
+      <DependentUpon>NewAdministrator.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Actors\Administrators\UX\ViewAdministrator.xaml.cs">
+      <DependentUpon>ViewAdministrator.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Actors\Employees\Attendance\DailyAttendance.cs" />
+    <Compile Include="Actors\Employees\UX\AddNewEmployee.xaml.cs">
+      <DependentUpon>AddNewEmployee.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Actors\Employees\UX\NewEmployee.xaml.cs">
+      <DependentUpon>NewEmployee.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Actors\Employees\UX\ViewEmployee.xaml.cs">
+      <DependentUpon>ViewEmployee.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Actors\UX\AddNewActor.xaml.cs">
+      <DependentUpon>AddNewActor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Contexts\AccountableContext.cs" />
+    <Compile Include="Stakeholders\Stakes\Income\Work Orders\Bills\UX\AdvancesMenu.xaml.cs">
+      <DependentUpon>AdvancesMenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Stakeholders\Stakes\Income\Work Orders\Bills\UX\BillsMenu.xaml.cs">
+      <DependentUpon>BillsMenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Stakeholders\Stakes\Income\Work Orders\Bills\UX\DuesMenu.xaml.cs">
+      <DependentUpon>DuesMenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Stakeholders\Stakes\Income\Work Orders\Bills\UX\ExpensesMenu.xaml.cs">
+      <DependentUpon>ExpensesMenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Stakeholders\Stakes\Income\Work Orders\Bills\UX\NewAdvance.xaml.cs">
+      <DependentUpon>NewAdvance.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Stakeholders\Stakes\Income\Work Orders\Bills\UX\NewDue.xaml.cs">
+      <DependentUpon>NewDue.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Stakeholders\Stakes\Income\Work Orders\Bills\UX\NewExpense.xaml.cs">
+      <DependentUpon>NewExpense.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Stakeholders\Stakes\Income\Work Orders\Deadline.cs" />
+    <Compile Include="Stakeholders\Clients\UX\AddNewClient.xaml.cs">
+      <DependentUpon>AddNewClient.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Stakeholders\Clients\UX\NewClient.xaml.cs">
+      <DependentUpon>NewClient.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Stakeholders\Clients\UX\ViewClient.xaml.cs">
+      <DependentUpon>ViewClient.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Stakeholders\Companies\Company.cs" />
+    <Compile Include="Actors\Employees\FactoryEmployee.cs" />
+    <Compile Include="Actors\Employees\MarketingEmployee.cs" />
+    <Compile Include="Actors\Employees\OfficeEmployee.cs" />
+    <Compile Include="Stakeholders\Companies\CompanyExpenditure.cs" />
+    <Compile Include="Stakeholders\Companies\CompanyTurnover.cs" />
+    <Compile Include="Stakeholders\Companies\Factories\FactoryExpenditure.cs" />
+    <Compile Include="Stakeholders\Companies\Factories\FactoryResource.cs" />
+    <Compile Include="Stakeholders\Companies\Factories\FactoryTurnover.cs" />
+    <Compile Include="Stakeholders\Companies\Factories\FactoryWorkOrder.cs" />
+    <Compile Include="Stakeholders\Companies\Factories\UX\NewFactory.xaml.cs">
+      <DependentUpon>NewFactory.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Stakeholders\Companies\Factories\UX\ViewFactory.xaml.cs">
+      <DependentUpon>ViewFactory.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Stakeholders\Companies\Offices\Office.cs" />
+    <Compile Include="Stakeholders\Companies\Offices\OfficeExpenditure.cs" />
+    <Compile Include="Stakeholders\Companies\Offices\OfficeMaterial.cs" />
+    <Compile Include="Stakeholders\Companies\Offices\OfficeResource.cs" />
+    <Compile Include="Stakeholders\Companies\Offices\OfficeTurnover.cs" />
+    <Compile Include="Stakeholders\Companies\Offices\OfficeWorkOrder.cs" />
+    <Compile Include="Stakeholders\Companies\Offices\UX\NewOffice.xaml.cs">
+      <DependentUpon>NewOffice.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Stakeholders\Companies\Offices\UX\ViewOffice.xaml.cs">
+      <DependentUpon>ViewOffice.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Stakeholders\Companies\UX\NewCompany.xaml.cs">
+      <DependentUpon>NewCompany.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Stakeholders\Companies\UX\ViewCompany.xaml.cs">
+      <DependentUpon>ViewCompany.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Stakeholders\Stakes\Income\Work Orders\Bills\Advance.cs" />
+    <Compile Include="Stakeholders\Stakes\Income\Work Orders\Bills\Expense.cs" />
+    <Compile Include="Stakeholders\Stakes\Income\Work Orders\Delivery.cs" />
+    <Compile Include="Stakeholders\Stakes\Income\Work Orders\Bills\Due.cs" />
+    <Compile Include="Stakeholders\Stakes\Income\Work Orders\Size.cs" />
+    <Compile Include="Stakeholders\Stakes\Income\Work Orders\UX\AddCategoryToWorkOrder.xaml.cs">
+      <DependentUpon>AddCategoryToWorkOrder.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Stakeholders\Stakes\Income\Work Orders\UX\AddNewItem.xaml.cs">
+      <DependentUpon>AddNewItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Stakeholders\Stakes\Income\Work Orders\UX\AddNewWork.xaml.cs">
+      <DependentUpon>AddNewWork.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Stakeholders\Stakes\Income\Work Orders\UX\AddNewWorkOrder.xaml.cs">
+      <DependentUpon>AddNewWorkOrder.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Stakeholders\Stakes\Income\Work Orders\UX\AddNewCategory.xaml.cs">
+      <DependentUpon>AddNewCategory.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Stakeholders\Stakes\Income\Work Orders\UX\AddSizeToCategories.xaml.cs">
+      <DependentUpon>AddSizeToCategories.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Stakeholders\Stakes\Income\Work Orders\UX\NewWork.xaml.cs">
+      <DependentUpon>NewWork.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Stakeholders\Stakes\Income\Work Orders\UX\NewWorkOrder.xaml.cs">
+      <DependentUpon>NewWorkOrder.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Stakeholders\Stakes\Income\Work Orders\UX\ViewWorkOrder.xaml.cs">
+      <DependentUpon>ViewWorkOrder.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Stakeholders\Stakes\Income\Work Orders\WorkOrderExpenditure.cs" />
+    <Compile Include="Stakeholders\Stakes\Income\Work Orders\WorkOrderTurnover.cs" />
+    <Compile Include="Stakeholders\Stakes\Income\Work Orders\Category.cs" />
+    <Compile Include="Stakeholders\Stakes\Expense\Expenditure.cs" />
+    <Compile Include="Stakeholders\Companies\Factories\Factory.cs" />
+    <Compile Include="Stakeholders\Stakes\Income\Work Orders\Bills\Bill.cs" />
+    <Compile Include="Stakeholders\Stakes\Income\Work Orders\Item.cs" />
+    <Compile Include="Stakeholders\Companies\Factories\FactoryMaterial.cs" />
+    <Compile Include="Stakeholders\Stakes\Expense\Material.cs" />
+    <Compile Include="Stakeholders\Stakes\Expense\Resource.cs" />
+    <Compile Include="Stakeholders\Stakes\Income\Production.cs" />
+    <Compile Include="Stakeholders\Stakeholder.cs" />
+    <Compile Include="Stakeholders\Stakes\Income\Work Orders\Work.cs" />
+    <Compile Include="Stakeholders\Stakes\Income\Work Orders\WorkOrder.cs" />
+    <Compile Include="Stakeholders\Stakes\Expense\TransportExpense.cs" />
+    <Compile Include="Stakeholders\Stakes\Income\Turnover.cs" />
+    <Compile Include="Stakeholders\UX\AddNewStakeholder.xaml.cs">
+      <DependentUpon>AddNewStakeholder.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UX\AddNewEntity.xaml.cs">
+      <DependentUpon>AddNewEntity.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UX\AdministratorMenu.xaml.cs">
+      <DependentUpon>AdministratorMenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UX\ClientMenu.xaml.cs">
+      <DependentUpon>ClientMenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UX\CompanyMenu.xaml.cs">
+      <DependentUpon>CompanyMenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UX\EmployeeMenu.xaml.cs">
+      <DependentUpon>EmployeeMenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UX\FactoryMenu.xaml.cs">
+      <DependentUpon>FactoryMenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UX\Login.xaml.cs">
+      <DependentUpon>Login.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UX\Menu.xaml.cs">
+      <DependentUpon>Menu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UX\OfficeMenu.xaml.cs">
+      <DependentUpon>OfficeMenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UX\ProductionSheetMenu.xaml.cs">
+      <DependentUpon>ProductionSheetMenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UX\WorkOrderMenu.xaml.cs">
+      <DependentUpon>WorkOrderMenu.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Actors\Administrators\UX\AddNewAdministrator.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Actors\Administrators\UX\NewAdministrator.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Actors\Administrators\UX\ViewAdministrator.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Actors\Employees\UX\AddNewEmployee.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Actors\Employees\UX\NewEmployee.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Actors\Employees\UX\ViewEmployee.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Actors\UX\AddNewActor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Stakeholders\Clients\Client.cs" />
+    <Compile Include="Actors\Employees\Employee.cs" />
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Stakeholders\Clients\UX\AddNewClient.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Stakeholders\Clients\UX\NewClient.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Stakeholders\Clients\UX\ViewClient.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Stakeholders\Companies\Factories\UX\NewFactory.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Stakeholders\Companies\Factories\UX\ViewFactory.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Stakeholders\Companies\Offices\UX\NewOffice.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Stakeholders\Companies\Offices\UX\ViewOffice.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Stakeholders\Companies\UX\NewCompany.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Stakeholders\Companies\UX\ViewCompany.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Stakeholders\Stakes\Income\Work Orders\Bills\UX\AdvancesMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Stakeholders\Stakes\Income\Work Orders\Bills\UX\BillsMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Stakeholders\Stakes\Income\Work Orders\Bills\UX\DuesMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Stakeholders\Stakes\Income\Work Orders\Bills\UX\ExpensesMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Stakeholders\Stakes\Income\Work Orders\Bills\UX\NewAdvance.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Stakeholders\Stakes\Income\Work Orders\Bills\UX\NewDue.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Stakeholders\Stakes\Income\Work Orders\Bills\UX\NewExpense.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Stakeholders\Stakes\Income\Work Orders\UX\AddCategoryToWorkOrder.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Stakeholders\Stakes\Income\Work Orders\UX\AddNewItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Stakeholders\Stakes\Income\Work Orders\UX\AddNewWork.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Stakeholders\Stakes\Income\Work Orders\UX\AddNewWorkOrder.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Stakeholders\Stakes\Income\Work Orders\UX\AddNewCategory.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Stakeholders\Stakes\Income\Work Orders\UX\AddSizeToCategories.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Stakeholders\Stakes\Income\Work Orders\UX\NewWork.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Stakeholders\Stakes\Income\Work Orders\UX\NewWorkOrder.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Stakeholders\Stakes\Income\Work Orders\UX\ViewWorkOrder.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Stakeholders\UX\AddNewStakeholder.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UX\AddNewEntity.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UX\AdministratorMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UX\ClientMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UX\CompanyMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UX\EmployeeMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UX\FactoryMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UX\Login.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UX\Menu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UX\OfficeMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UX\ProductionSheetMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UX\WorkOrderMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Stakeholders\Stakes\Income\Work Orders\Product.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\Accountable.Actors.Administrators.Administrator.datasource" />
+    <None Include="Properties\DataSources\Accountable.Actors.Employees.Employee.datasource" />
+    <None Include="Properties\DataSources\Accountable.Stakeholders.Clients.Client.datasource" />
+    <None Include="Properties\DataSources\Accountable.Stakeholders.Companies.Company.datasource" />
+    <None Include="Properties\DataSources\Accountable.Stakeholders.Companies.Factories.Factory.datasource" />
+    <None Include="Properties\DataSources\Accountable.Stakeholders.Companies.Offices.Office.datasource" />
+    <None Include="Properties\DataSources\Accountable.Stakeholders.Stakes.Expense.Expenditure.datasource" />
+    <None Include="Properties\DataSources\Accountable.Stakeholders.Stakes.Income.Production.datasource" />
+    <None Include="Properties\DataSources\Accountable.Stakeholders.Stakes.Income.Turnover.datasource" />
+    <None Include="Properties\DataSources\Accountable.Stakeholders.Stakes.Income.Work_Orders.Bills.Advance.datasource" />
+    <None Include="Properties\DataSources\Accountable.Stakeholders.Stakes.Income.Work_Orders.Bills.Bill.datasource" />
+    <None Include="Properties\DataSources\Accountable.Stakeholders.Stakes.Income.Work_Orders.Bills.Due.datasource" />
+    <None Include="Properties\DataSources\Accountable.Stakeholders.Stakes.Income.Work_Orders.Bills.Expense.datasource" />
+    <None Include="Properties\DataSources\Accountable.Stakeholders.Stakes.Income.Work_Orders.Work.datasource" />
+    <None Include="Properties\DataSources\Accountable.Stakeholders.Stakes.Income.Work_Orders.WorkOrder.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Stakeholders\Stakes\Income\Work Orders\Test Cases\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CustomControl\CustomControl\CustomControl.csproj">
+      <Project>{ADFD4522-6E2F-4AEC-8AD3-2441497957A1}</Project>
+      <Name>CustomControl</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
